@@ -1,0 +1,65 @@
+package com.localperks.entity;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @since 2021-12-22
+ */
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@TableName("tb_voucher")
+public class Voucher implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
+
+    private Long shopId;
+
+    private String title;
+
+    private String subTitle;
+
+    private String rules;
+
+    private Long payValue;
+
+    private Long actualValue;
+
+    /** ISO 4217 currency code for monetary values, for example USD or JPY. */
+    private String currency;
+
+    private Integer type;
+
+    private Integer status;
+    @TableField(exist = false)
+    private Integer stock;
+
+    @TableField(exist = false)
+    private LocalDateTime beginTime;
+
+    @TableField(exist = false)
+    private LocalDateTime endTime;
+
+    private LocalDateTime createTime;
+
+
+    private LocalDateTime updateTime;
+
+
+}

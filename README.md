@@ -89,6 +89,12 @@ mvn spring-boot:run
 
 The maintainer's machine-specific configuration is intentionally excluded from Git.
 
+## Demo data
+
+The database script includes a small Japanese-language demo dataset with fictional Tokyo-area businesses, community posts, E.164 phone numbers, and JPY offers. Placeholder image URLs are used so the repository does not redistribute third-party course assets.
+
+Limited-time offers are not inserted directly by the SQL script. Create them through `POST /api/v1/offers/seckill` so their MySQL records and Redis inventory are initialized together.
+
 ## Authentication example
 
 Phone numbers must use E.164 format. Encode the leading `+` as `%2B` when it appears in a URL query string.

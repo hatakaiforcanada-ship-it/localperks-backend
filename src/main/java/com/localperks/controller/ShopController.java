@@ -6,9 +6,15 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.localperks.dto.Result;
 import com.localperks.entity.Shop;
 import com.localperks.service.IShopService;
-import com.localperks.service.impl.ShopServiceImpl;
 import com.localperks.utils.SystemConstants;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
@@ -17,7 +23,7 @@ import javax.annotation.Resource;
 public class ShopController {
 
     @Resource
-    public IShopService shopService;
+    private IShopService shopService;
 
     @GetMapping("/{id}")
     public Result queryShopById(@PathVariable("id") Long id) {

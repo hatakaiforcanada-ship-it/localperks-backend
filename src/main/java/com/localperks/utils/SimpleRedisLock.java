@@ -3,13 +3,12 @@ package com.localperks.utils;
 import cn.hutool.core.lang.UUID;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
-import java.util.StringTokenizer;
 import java.util.concurrent.TimeUnit;
 
 public class SimpleRedisLock implements ILock{
 
-    private String name;
-    private StringRedisTemplate stringRedisTemplate;
+    private final String name;
+    private final StringRedisTemplate stringRedisTemplate;
 
     public SimpleRedisLock(String name, StringRedisTemplate stringRedisTemplate) {
         this.name = name;

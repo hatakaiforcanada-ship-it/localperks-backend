@@ -22,4 +22,4 @@ The database also has a unique `(user_id, voucher_id)` index as a final one-clai
 
 ## Cache patterns
 
-The project contains examples of cache-aside reads, null-value caching, mutex-based cache rebuilds, and logical expiration. These approaches are retained as explicit learning examples rather than hidden behind a generic caching abstraction.
+`CacheClient` centralizes cache-aside reads, null-value caching, Redisson-based mutex rebuilds, and logical expiration. `ShopServiceImpl` currently uses the cache-aside/pass-through path for business details; the mutex and logical-expiration methods remain explicit, tested strategies that can be selected for different consistency and latency requirements.
